@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="X9K-7Q-lBc">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="X9K-7Q-lBc">
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="X9K-7Q-lBc" id="6jg-FM-cbE">
@@ -41,7 +41,11 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="To Do List" id="XoE-YY-R2d">
-                        <barButtonItem key="leftBarButtonItem" title="Edit" id="kcL-ra-Zmf"/>
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="kcL-ra-Zmf">
+                            <connections>
+                                <action selector="editBarButtonPressed:" destination="BYZ-38-t0r" id="dyq-In-4iH"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="aGF-2t-SRk">
                             <connections>
                                 <segue destination="gjF-fC-J5w" kind="presentation" identifier="AddItem" id="JsY-ed-wPJ"/>
@@ -49,6 +53,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addBarButton" destination="aGF-2t-SRk" id="e2D-rA-78r"/>
+                        <outlet property="editBarButton" destination="kcL-ra-Zmf" id="zIX-95-r2j"/>
                         <outlet property="tableView" destination="c29-Nl-HuB" id="hCI-zH-1b7"/>
                     </connections>
                 </viewController>
